@@ -1,0 +1,37 @@
+{% extends 'admin/adminbase.html' %}
+{% load static %}
+
+{% block contents %}
+
+<br>
+
+<section id="intro">
+  <div class="intro-text">
+       <table class="table table-bordered footer_title bg-light text-dark">
+<thead>
+  <tr>
+      <th>S.No</th>
+      <th>username</th>
+      <th>email</th>
+      <th>mobileno</th>
+      <th>city</th>
+      <th>state</th>
+  </tr>
+</thead>
+<tbody>
+    {% for x in data %}
+    <tr>
+      <td>{{x.id}}</td>
+      <td>{{x.username}}</td>
+      <td>{{x.email}}</td>
+      <td>{{x.mobile}}</td>
+      <td>{{x.city}}</td>
+      <td>{{x.state}}</td>
+      </tr>
+      
+
+    {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock %}

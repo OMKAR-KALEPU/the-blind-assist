@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Animated-CSS-Waves-Background-SVG.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Hero-Clean-images.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Navbar-Right-Links-Dark-icons.css' %}">
+</head>
+
+<body>
+    <div class="container" style="position: absolute;left: 0;right: 0;top: 50%;transform: translateY(-50%);-ms-transform: translateY(-50%);-moz-transform: translateY(-50%);-webkit-transform: translateY(-50%);-o-transform: translateY(-50%);">
+        <div class="row d-flex d-xl-flex justify-content-center justify-content-xl-center">
+            <div class="col-sm-12 col-lg-8 col-xl-9 col-xxl-7 bg-white shadow-lg" style="border-radius: 5px;">
+                <div class="p-5" style="background: rgba(255,255,255,0.18);">
+                    <div class="text-center">
+                        <h4 class="text-dark mb-4">Create an Account!</h4>
+                    </div>
+                    <form action="/usersignup/" class="user" method="post">
+                        {% csrf_token %}
+                        <div class="mb-3"><input class="form-control form-control-user" type="text" name="username" placeholder="Username" required=""></div>
+                        <div class="mb-3"><input class="form-control form-control-user" type="email" name="email" id="email" placeholder="Email Address" required=""></div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" name="password" type="password" id="password" placeholder="Password" required=""></div>
+                            <div class="col-sm-6"><input class="form-control form-control-user" type="text" name="mobile" id="mobile" placeholder="Mobile Number" required=""></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" name="city" type="text" placeholder="City" required=""></div>
+                            <div class="col-sm-6"><input class="form-control form-control-user" type="text" name="state" placeholder="State" required=""></div>
+                        </div>
+                        <div class="row mb-3">
+                            <p id="emailErrorMsg" class="text-danger" style="display: none;">Paragraph</p>
+                            <p id="passwordErrorMsg" class="text-danger" style="display: none;">Paragraph</p>
+                        </div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" valu="submit" type="submit">Register Account</button>
+                        <hr>
+                    </form>
+                    {% if messages %}
+                          {% for message in messages %}
+                              <h1 color='darkred'> {{ message }}</h1>
+                          {% endfor %}
+                      {% endif %}
+                    <div class="text-center"><a class="small" href="{% url 'userlogin' %}">Already have an account? Login!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    
+{% endblock %}
+</body>
+
+</html>
