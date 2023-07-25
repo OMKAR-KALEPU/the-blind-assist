@@ -38,9 +38,11 @@ The "Currency Detection for the Visually Impaired" project aims to assist visual
   http://127.0.0.1:8000/
   ```
 
-- The user interface looks something like this: <br>
-[interface](/media/interface/currency_detector.png) 
-You can click on the User link in the navbar and register yourself and then you'll be able to predict your notes using live camera with voice output. <br>
+- The user interface looks something like this: 
+
+![interface](/media/interface/currency_detector.png) 
+
+- You can click on the User section present in the navbar and register yourself and then you'll be able to predict your notes using live camera with voice output. <br>
 
 ## Note
 - The path to the classifier should be changed accordingly in user/views.py file.
